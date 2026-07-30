@@ -1,0 +1,24 @@
+text = """Artificial Intelligence (AI) is transforming industries across the world.
+AI is used in healthcare to assist doctors in diagnosis.
+Many companies invest heavily in AI research because AI improves efficiency.
+As AI continues to evolve, professionals with AI skills are in high demand.
+"""
+
+word = "AI"
+
+# First occurrence
+first = text.find(word)
+
+if first != -1:
+    print("First occurrence index:", first)
+
+    # Starting position
+    print("Starting Position:", first)
+
+    # Ending position
+    print("Ending Position:", first + len(word) - 1)
+
+    # Total occurrences
+    print("Total occurrences:", text.count(word))
+else:
+    print("Word not found")
