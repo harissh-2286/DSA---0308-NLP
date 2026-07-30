@@ -1,0 +1,18 @@
+import re
+
+emails = [
+    "john@gmail.com",
+    "abc@yahoo.in",
+    "student123@college.edu",
+    "wrong@email",
+    "@gmail.com",
+    "test123@gmail.org"
+]
+
+pattern = re.compile(r'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.(com|org|edu|in)$')
+
+for email in emails:
+    if pattern.fullmatch(email):
+        print(email, "-> Valid")
+    else:
+        print(email, "-> Invalid")
