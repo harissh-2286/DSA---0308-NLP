@@ -1,0 +1,17 @@
+import nltk
+from nltk import word_tokenize, pos_tag
+
+# Input sentence
+text = "The boy is playing football"
+
+# Tokenization
+words = word_tokenize(text)
+
+# POS tagging
+result = pos_tag(words)
+
+print("Word\tPOS Tag")
+print("----------------")
+
+for word, tag in result:
+    print(word, "\t", tag)
