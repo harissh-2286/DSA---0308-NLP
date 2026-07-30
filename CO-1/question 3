@@ -1,0 +1,26 @@
+import re
+
+text = """Artificial Intelligence (AI) is transforming industries across the world.
+AI is used in healthcare to assist doctors in diagnosis.
+Many companies invest heavily in AI research.
+As AI continues to evolve, professionals with AI skills are in high demand.
+"""
+
+# Split into sentences
+sentences = re.split(r'[.!?]\s*', text)
+
+sentences = [s for s in sentences if s]
+
+print("Sentences:")
+for s in sentences:
+    print(s)
+
+print("\nTotal Sentences:", len(sentences))
+
+# Split into words
+words = re.split(r'\s+', text)
+
+print("\nTotal Words:", len(words))
+
+print("\nWords:")
+print(words)
