@@ -1,0 +1,19 @@
+import nltk
+from nltk.stem import PorterStemmer
+from nltk.stem import WordNetLemmatizer
+
+# Create objects
+stemmer = PorterStemmer()
+lemmatizer = WordNetLemmatizer()
+
+words = ["playing", "studies", "running", "cars"]
+
+print("Word\tStem\tLemma")
+print("-------------------------")
+
+for word in words:
+
+    stem = stemmer.stem(word)
+    lemma = lemmatizer.lemmatize(word)
+
+    print(word, "\t", stem, "\t", lemma)
