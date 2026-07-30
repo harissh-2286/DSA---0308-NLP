@@ -1,0 +1,27 @@
+import re
+
+words = [
+    "playing",
+    "quickly",
+    "beautiful",
+    "dogs"
+]
+
+for word in words:
+
+    if re.match(".*ing$", word):
+        tag = "VBG"
+
+    elif re.match(".*ly$", word):
+        tag = "RB"
+
+    elif re.match(".*ful$", word):
+        tag = "JJ"
+
+    elif re.match(".*s$", word):
+        tag = "NNS"
+
+    else:
+        tag = "NN"
+
+    print(word, "---->", tag)
