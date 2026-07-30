@@ -1,0 +1,20 @@
+# Initial tags
+
+words = {
+    "play": "NN",
+    "playing": "NN",
+    "walk": "NN"
+}
+
+# Transformation rule
+
+for word in words:
+
+    if word.endswith("ing"):
+        words[word] = "VBG"
+
+print("Word\tPOS Tag")
+print("----------------")
+
+for word, tag in words.items():
+    print(word, "\t", tag)
