@@ -1,0 +1,45 @@
+import random
+
+# Training text
+text = "I love natural language processing and I love machine learning"
+
+# Convert text into words
+words = text.split()
+
+# Create Bigram model
+bigram = {}
+
+for i in range(len(words)-1):
+    current_word = words[i]
+    next_word = words[i+1]
+
+    if current_word not in bigram:
+        bigram[current_word] = []
+
+    bigram[current_word].append(next_word)
+
+
+# Text generation function
+def generate_text(start_word, length):
+
+    result = [start_word]
+    current = start_word
+
+    for i in range(length-1):
+
+        if current in bigram:
+            next_word = random.choice(bigram[current])
+            result.append(next_word)
+            current = next_word
+
+        else:
+            break
+
+    return " ".join(result)
+
+
+# Generate text
+start = "I"
+
+print("Generated Text:")
+print(generate_text(start, 8))
