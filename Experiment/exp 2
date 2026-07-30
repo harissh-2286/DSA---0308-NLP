@@ -1,0 +1,29 @@
+def finite_automaton(string):
+
+    state = "q0"
+
+    for char in string:
+
+        if state == "q0":
+            if char == 'a':
+                state = "q1"
+
+        elif state == "q1":
+            if char == 'b':
+                state = "q2"
+            elif char == 'a':
+                state = "q1"
+
+        elif state == "q2":
+            if char == 'a':
+                state = "q1"
+
+    if state == "q2":
+        return "Accepted"
+    else:
+        return "Rejected"
+
+
+text = input("Enter a string: ")
+
+print("Result:", finite_automaton(text))
