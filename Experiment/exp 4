@@ -1,0 +1,23 @@
+def plural_fsm(word):
+
+    state = "START"
+
+    if word.endswith("s") or word.endswith("x") or word.endswith("ch"):
+        state = "ADD_ES"
+
+    else:
+        state = "ADD_S"
+
+
+    if state == "ADD_ES":
+        return word + "es"
+
+    elif state == "ADD_S":
+        return word + "s"
+
+
+noun = input("Enter a noun: ")
+
+plural = plural_fsm(noun)
+
+print("Plural Form:", plural)
