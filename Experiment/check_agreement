@@ -1,0 +1,33 @@
+grammer={
+    "s":["NP VP"],
+    "NP":["Det N"],
+    "VP":["V"],
+    "Det":["the"],
+    "N_singular":["boy","girl","student"],
+    "N_plural":["boys","girls","students"],
+    "V_singular":["runs","plays","eats"],
+    "V_plural":["run","play","eat"]
+}
+def check_agreement(sentence):
+    words = sentence.lower().split()
+    if len(words) != 3:
+        return "Invalid sentence"
+    determiner, noun, verb = words
+    if noun in grammer["N_singular"] and verb in grammer["V_singular"]:
+        return "Agreement Correct (Singular)"
+    elif noun in grammer["N_plural"] and verb in grammer["V_plural"]:
+        return "Agreement Correct (Plural)"
+    else:
+        return "Agreement Incorrect"
+sentences = [
+    "the boy runs",
+    "the girl plays",
+    "the student eats",
+    "the boys run",
+    "the girls play",
+    "the students eat",
+    "the boy run",
+    "the boys runs"
+]
+for sentence in sentences:
+    print(sentence, "->", check_agreement(sentence))
