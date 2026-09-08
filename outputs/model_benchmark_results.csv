@@ -1,0 +1,2 @@
+model,failure_accuracy,failure_macro_f1,failure_precision,failure_recall,risk_accuracy,risk_macro_f1,early_warning_accuracy
+BiLSTM + Attention,1.0,1.0,1.0,1.0,1.0,1.0,1.0
